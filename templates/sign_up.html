@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST" id="signUpForm">
+        <input type="text" name="username" placeholder="Enter username">
+        <input type="password" id="password1" name="password" placeholder="Enter password">
+        <input type="password" id="password2" placeholder="Repeat password">
+        <input type="submit" value="Sign Up">
+    </form>
+
+    <script>
+        const signUpForm = document.getElementById('signUpForm');
+        signUpForm.addEventListener('submit', function (event){
+            event.preventDefault();
+
+            let password1 = document.getElementById('password1').value,
+                password2 = document.getElementById('password2').value;
+
+            if (password1 === password2){
+                signUpForm.submit();
+                return;
+            }
+            alert('Passwords do not match!');
+        })
+    </script>
+</body>
+</html>
+<!-- preventDefault() -->
